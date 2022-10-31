@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from itertools import product
 
+
+# defining the class "Product" parameters to be used and I am putting in the variables needed.
 class Product:
     name = "Nido"
     type = "Essentia"
@@ -10,6 +12,7 @@ class Product:
     bar_code = 12321
     production_date = "12/23/12"
 
+# Implementing the abstract class "ProductAbstract " and telling it to inherit from the  ABC module .
 class ProductAbstract(ABC):
 
     @abstractmethod
@@ -36,6 +39,7 @@ class ProductAbstract(ABC):
     def delete_product(self):
         pass 
 
+# Implementing the class ProductManager to implement the class ProductAbstract through inheritance by instantiating.
 class ProductManager(ProductAbstract):
     def create_product(self, product: Product):
         print(f"Saving the product : {product.name}...\n") 
@@ -44,16 +48,16 @@ class ProductManager(ProductAbstract):
         print(f"Hello Abia ! Change weight: {product.weight} ?")
 
     def get_product_by_id(self, product:Product):
-        print(f"Hello Abia ! Searching for your product {product.bar_code}...Please wait a min. Thank you.")
+        print(f"Hello Abia! Searching for your product {product.bar_code}...Please wait a min. Thank you.")
 
     def upload_product_image(self):
-        print("Hey there! Uploading your image....70%")
+        print("Hey there! Uploading your image....70%\n")
 
     def get_all_products(self):
-        print("Fetching the list of all inventory, Please wait")
+        print("Fetching the list of all inventory, Please wait\n")
 
     def delete_product(self, product:Product):
-        print(f"Deleting:{product.name},{product.weight}")
+        print(f"Deleting:{product.name},{product.weight}\n")
 
 product_manager = ProductManager()
 product_manager.create_product(product=Product)
